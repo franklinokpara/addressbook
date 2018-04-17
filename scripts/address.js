@@ -35,7 +35,7 @@ window.onload = function(){
 
     function addToBook(){
        let isNull = fullname.value != '' && phone.value != '' && email.value != '';
-       console.log(isNull);
+    //    console.log(isNull);
        if(isNull){
         let obj =new jsonStructure(fullname.value, phone.value, email.value);
         addressBook.push(obj);
@@ -56,7 +56,7 @@ window.onload = function(){
     }
 
     function clearForm(){
-        let frm = document.querySelectorAll(".formfields");
+        let frm = document.querySelectorAll(".formFields");
         for(let i in frm){
             frm[i].value = '';
         }
@@ -70,9 +70,9 @@ window.onload = function(){
             addBookDiv.innerHTML = '';
             for(let n in addressBook){
                 let str = '<div class ="entry">';
-                    str += '<div class ="name:><p>' + addressBook[n].fullname + '</p></div>';
-                    str += '<div class ="phone:><p>' + addressBook[n].phone + '</p></div>';
-                    str += '<div class ="email:><p>' + addressBook[n].email + '</p></div>';
+                    str += '<div class ="name"><p>' + addressBook[n].fullname + '</p></div>';
+                    str += '<div class ="phone"><p>' + addressBook[n].phone + '</p></div>';
+                    str += '<div class ="email"><p>' + addressBook[n].email + '</p></div>';
                     str += '<div class ="del"><a href ="#" class = "delbutton" data-id="' + n + '">Delete</a></div"';
                     str += '</div>';
                     addBookDiv.innerHTML += str;
@@ -80,5 +80,5 @@ window.onload = function(){
         }
     }
         
-        showAddressBook();
+    showAddressBook();
 } 
